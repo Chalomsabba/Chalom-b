@@ -3,43 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>יום הולדת שמח!</title>
+    <title>יום הולדת שמח עם חתול</title>
     <style>
+        /* סגנונות לדף */
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             background-color: #ffe5b4;
             color: #333;
-            direction: rtl;
-            margin: 0;
-            padding: 0;
+            direction: rtl; /* שינוי כיוון טקסט לשפות מימין לשמאל */
         }
-        header {
-            background-color: #ffcc00;
-            padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        header h1 {
+        
+        /* עיצוב כותרת */
+        h1 {
             font-size: 3rem;
-            margin: 0;
             color: #ff6347;
+            margin-top: 20px;
         }
-        main {
-            margin-top: 2rem;
-            padding: 1rem;
+        
+        /* סגנונות לתמונה של החתול */
+        .cat-image {
+            width: 50%;
+            max-width: 400px;
+            border-radius: 10px;
+            margin-top: 20px;
+            transition: transform 0.3s ease;
         }
-        .emoji {
-            font-size: 5rem;
-            margin: 1rem;
-            animation: bounce 1.5s infinite;
+
+        .cat-image:hover {
+            transform: scale(1.1); /* תמונה תגדל טיפה כשמניחים עליה את העכבר */
         }
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
+
+        /* סגנונות לכפתור */
+        .celebrate-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ff6347;
+            color: white;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .celebrate-btn:hover {
+            transform: scale(1.1); /* אפקט הגדלה על הכפתור */
         }
     </style>
 </head>
@@ -47,9 +57,15 @@
     <header>
         <h1>יום הולדת שמח!</h1>
     </header>
+
     <main>
-        <p class="emoji">🎉🥳🎂🎈🎁</p>
-        <p>מאחלים לך המון שמחה, אושר ובריאות!</p>
+        <p>הנה חתול חמוד לחגיגת יום ההולדת!</p>
+        
+        <!-- הוספת תמונה של חתול -->
+        <img src="https://placekitten.com/400/400" alt="חתול חמוד" class="cat-image">
+
+        <!-- כפתור לחגיגה -->
+        <a href="#" class="celebrate-btn">חגגו איתנו!</a>
     </main>
 </body>
-</html
+</html>
