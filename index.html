@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>הגבר הכי חציל בעולם</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #2d2d2d;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 4rem;
+            color: #ffcc00;
+            margin-top: 50px;
+            text-shadow: 0 0 20px #ffcc00, 0 0 30px #ffcc00;
+        }
+
+        /* סגנון לזיקוקים */
+        .fireworks {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://cdn.pixabay.com/photo/2016/09/19/16/33/fireworks-1688354_960_720.jpg') no-repeat center center;
+            background-size: cover;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .button-container {
+            margin-top: 50px;
+        }
+
+        .show-image-btn {
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .show-image-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .image-container {
+            display: none;
+            margin-top: 30px;
+        }
+
+        .image-container img {
+            width: 300px;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+    <!-- אפקט זיקוקים -->
+    <div class="fireworks"></div>
+
+    <!-- כותרת -->
+    <h1>הגבר הכי חציל בעולם</h1>
+
+    <!-- כפתור שמציג את התמונה -->
+    <div class="button-container">
+        <button class="show-image-btn" onclick="showImage()">הצג תמונה</button>
+    </div>
+
+    <!-- תצוגת התמונה -->
+    <div class="image-container" id="image-container">
+        <img src="IMG_2934.jpeg" alt="תמונה של הגבר החציל">
+    </div>
+
+    <script>
+        function showImage() {
+            // הצגת התמונה כאשר לוחצים על הכפתור
+            document.getElementById("image-container").style.display = "block";
+        }
+    </script>
+</body>
+</html>
