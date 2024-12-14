@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>תמונה של כלב וקונפטי</title>
+    <title>תמונה של חתול</title>
     <style>
+        /* סגנונות לדף */
         body {
             font-family: Arial, sans-serif;
             text-align: center;
@@ -13,111 +14,24 @@
             padding: 0;
         }
 
+        /* עיצוב כותרת */
         h1 {
             margin-top: 20px;
             font-size: 2.5rem;
             color: #333;
         }
 
-        .dog-image {
+        /* סגנונות לתמונה של החתול */
+        .cat-image {
             width: 300px;
-            margin-top: 20px;
             border-radius: 10px;
-            cursor: pointer;
-            transition: transform 0.2s ease-in-out;
-        }
-
-        .dog-image:hover {
-            transform: scale(1.1);
-        }
-
-        canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>לחצו על הכלב כדי לחגוג!</h1>
-    <img src="https://place-puppy.com/300x300" alt="כלב חמוד" class="dog-image" id="dogImage">
-    <canvas id="confettiCanvas"></canvas>
-
-    <script>
-        const canvas = document.getElementById("confettiCanvas");
-        const ctx = canvas.getContext("2d");
-
-        // מתיחת הקנבס לגודל המסך
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        window.addEventListener("resize", () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
-
-        // פונקציית קונפטי
-        const confettiColors = ["#ff6347", "#ffeb3b", "#4caf50", "#2196f3", "#9c27b0"];
-        const confettiParticles = [];
-
-        class ConfettiParticle {
-            constructor() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height - canvas.height / 2;
-                this.size = Math.random() * 10 + 5;
-                this.color = confettiColors[Math.floor(Math.random() * confettiColors.length)];
-                this.speed = Math.random() * 3 + 2;
-                this.angle = Math.random() * Math.PI * 2;
-                this.spin = Math.random() * 0.1 - 0.05;
-            }
-
-            update() {
-                this.y += this.speed;
-                this.angle += this.spin;
-
-                if (this.y > canvas.height) {
-                    this.y = Math.random() * canvas.height - canvas.height;
-                    this.x = Math.random() * canvas.width;
-                }
-            }
-
-            draw() {
-                ctx.save();
-                ctx.translate(this.x, this.y);
-                ctx.rotate(this.angle);
-                ctx.fillStyle = this.color;
-                ctx.fillRect(-this.size / 2, -this.size / 2, this.size, this.size);
-                ctx.restore();
-            }
-        }
-
-        function addConfetti() {
-            for (let i = 0; i < 100; i++) {
-                confettiParticles.push(new ConfettiParticle());
-            }
-        }
-
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            confettiParticles.forEach((particle) => {
-                particle.update();
-                particle.draw();
-            });
-
-            requestAnimationFrame(animate);
-        }
-
-        // אירוע לחיצה על תמונת הכלב
-        const dogImage = document.getElementById("dogImage");
-        dogImage.addEventListener("click", () => {
-            addConfetti();
-        });
-
-        animate();
-    </script>
+    <h1>הנה החתול שלך!</h1>
+    <!-- הצגת התמונה -->
+    <img src="ca.png" alt="תמונה של חתול" class="cat-image">
 </body>
 </html>
