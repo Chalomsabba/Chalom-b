@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>הגבר הכי חציל בעולם</title>
+    <title>הגבר הכי חתיך בעולם</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,6 +12,7 @@
             margin: 0;
             padding: 0;
             color: #fff;
+            overflow: hidden; /* מונע גלילה עם כל האפקטים */
         }
 
         h1 {
@@ -19,6 +20,16 @@
             color: #ffcc00;
             margin-top: 50px;
             text-shadow: 0 0 20px #ffcc00, 0 0 30px #ffcc00;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 20px #ffcc00, 0 0 30px #ffcc00;
+            }
+            100% {
+                text-shadow: 0 0 40px #ffcc00, 0 0 60px #ffcc00;
+            }
         }
 
         /* סגנון לזיקוקים */
@@ -32,6 +43,13 @@
             background-size: cover;
             opacity: 0.5;
             pointer-events: none;
+            animation: fireworksEffect 3s infinite ease-in-out;
+        }
+
+        @keyframes fireworksEffect {
+            0% { opacity: 0.5; }
+            50% { opacity: 0.8; }
+            100% { opacity: 0.5; }
         }
 
         .button-container {
@@ -46,21 +64,57 @@
             border: none;
             border-radius: 10px;
             cursor: pointer;
-            transition: transform 0.3s;
+            transition: transform 0.3s, background-color 0.3s;
         }
 
         .show-image-btn:hover {
             transform: scale(1.1);
+            background-color: #ff4500;
         }
 
         .image-container {
             display: none;
             margin-top: 30px;
+            animation: fadeIn 2s ease;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
         }
 
         .image-container img {
             width: 300px;
             border-radius: 15px;
+            animation: bounce 1.5s infinite alternate;
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* אפקטים של רקע */
+        .background-effect {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255, 99, 71, 0.7), rgba(255, 165, 0, 0.5));
+            border-radius: 50%;
+            animation: pulse 2s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.7; }
         }
     </style>
 </head>
@@ -68,8 +122,11 @@
     <!-- אפקט זיקוקים -->
     <div class="fireworks"></div>
 
+    <!-- אפקט רקע זורם -->
+    <div class="background-effect"></div>
+
     <!-- כותרת -->
-    <h1>הגבר הכי חציל בעולם</h1>
+    <h1>הגבר הכי חתיך בעולם</h1>
 
     <!-- כפתור שמציג את התמונה -->
     <div class="button-container">
